@@ -12,6 +12,6 @@
 	</style>
 </head>
 <body>
-	<a href="https://labs-web-duda.herokuapp.com/lab11/lab11.php">Лабораторна робота №11</a>
+	<a href="lab11/lab11.php">Лабораторна робота №11</a>
 </body>
 </html>
