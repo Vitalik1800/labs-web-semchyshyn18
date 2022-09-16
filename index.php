@@ -13,5 +13,6 @@
 </head>
 <body>
 	<a href="lab11/lab11.php">Лабораторна робота №11</a>
+	<a href="lab12/lab12.php">Лабораторна робота №12</a>
 </body>
 </html>
