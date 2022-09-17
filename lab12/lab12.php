@@ -78,7 +78,7 @@
  $y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  while ($i1 < 5) {
  	$i1++;
-	echo $y1;
+	echo $c;
  	echo "<div class='first'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i1 = $y1</div><br>";
  }
 }
