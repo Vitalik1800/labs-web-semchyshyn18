@@ -70,7 +70,6 @@
  echo "<br>";
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br>";
  if(isset($_POST['submit'])){
-	 echo "clicked";
  	$a = $_POST['a'];
  	$b = $_POST['b'];
  	$c = $_POST['c'];
@@ -78,8 +77,8 @@
  	$i1 = 0;
  	while ($i1 < 5) {
  		$i1++;
- 		$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		echo "Результати з виконанням циклу while: Ітерація $i1 = $y1";
+ 		//$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		echo $a;
  	}
  	/*$i2=0;
  	while($i2 < 5):
