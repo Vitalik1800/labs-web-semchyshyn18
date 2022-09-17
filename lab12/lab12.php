@@ -64,8 +64,17 @@
 </body>
 </html>
 <?php 
+ $a = $_POST['a'];
+ $b = $_POST['b'];
+ $c = $_POST['c'];
+ $x = $_POST['x'];
  if(isset($_POST['a']) && isset($_POST['b']) && isset($_POST['c']) && isset($_POST['x'])){
-    echo "clicked";
+	 $i1 = 0;
+	 $y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+	 while ($i1 < 5) {
+		 $i1++;
+		 echo $c;
+ 	//echo "<div class='first'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i1 = $y1</div><br>";
  }
  if(isset($_POST['submit'])){
  echo "<br><b>Група СТс-41, Семчишин Віталій Ігорович</b>";
@@ -73,16 +82,8 @@
  echo "<b>Дата створення документу = ".date('16.09.2022')."</b>";
  echo "<br>";
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br>";
- $a = $_POST['a'];
- $b = $_POST['b'];
- $c = $_POST['c'];
- $x = $_POST['x'];
- $i1 = 0;
- $y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- while ($i1 < 5) {
- 	$i1++;
-	echo $c;
- 	//echo "<div class='first'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i1 = $y1</div><br>";
+
+
  }
 }
 ?>
