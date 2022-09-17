@@ -54,33 +54,61 @@
 </head>
 <body>
 	<img src="img/1.png" alt="">
-	<form action="" method="post">
+	<form>
 		<input type="text" name="a" placeholder="Enter A"><br><br>	
 		<input type="text" name="b" placeholder="Enter B"><br><br>
 		<input type="text" name="c" placeholder="Enter C"><br><br>
 		<input type="text" name="x" placeholder="Enter X"><br><br>
-		<input type="submit" name="submit" value="Calculate">
+		<button name="submit" value="Calculate">Calculate</button>
+			<br>	
 	</form>
 </body>
 </html>
 <?php 
- 
- if(isset($_POST['submit'])){
  echo "<br><b>Група СТс-41, Семчишин Віталій Ігорович</b>";
  echo "<br>";
  echo "<b>Дата створення документу = ".date('16.09.2022')."</b>";
  echo "<br>";
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br>";
- $a = $_GET['a'];
- $b = $_GET['b'];
- $c = $_GET['c'];
- $x = $_GET['x'];
+ if(isset($_GET["submit"])){
+ 
+ $a = $_GET["a"];
+ $b = $_GET["b"];
+ $c = $_GET["c"];
+ $x = $_GET["x"];
  $i1 = 0;
- $y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  while ($i1 < 5) {
-	 $i1++;
-	 echo $i1;
+ 		$i1++;
+ 		$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		echo "<div class='first'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i1 = $y1</div><br>";
  }
- 	//echo "<div class='first'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i1 = $y1</div><br>";
+ $i2=0;
+ while($i2 < 5):
+ 	$y2 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 	$i2++;
+ ?>
+ <div class="second"><div>Результати з виконанням циклу while (альтернативний синтаксис):</div><?php echo "Ітерація ".$i2."=".$y2;?></div><br>
+ <?php
+endwhile;
+$i3 = 0;
+ 	do{
+ 		$y3 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		$i3++;
+ 		?>
+ 		<div class="third"><div>Результати з виконанням циклу do while:</div><?php echo "Ітерація ".$i3."=".$y3;?></div><br>
+ 		<?php
+ 	} while($i3 < 5);
+ 	for ($i4=1; $i4 <= 5; $i4++) { 
+ 		$y4 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		?>
+ 		<div class="fourth"><div>Результати з виконанням циклу for:</div><?php echo "Ітерація ".$i4."=".$y4;?></div><br>	
+ 		<?php 
+ 	}
+ 	for($i5=1; $i5 <= 5; $i5++){
+ 		$y5 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		?>
+ 		<div class="fifth"><div>Результати з виконанням циклу for: (альтернативний синтаксис)</div><?php echo "Ітерація ".$i5."=".$y5;?></div><br>	
+ 		<?php 
+ 	}
 }
 ?>
