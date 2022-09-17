@@ -65,6 +65,9 @@
 </body>
 </html>
 <?php 
+ function cp($a1, $b1, $c1){
+ 	return sqrt($a1) + 3*sqrt($b1) + sin($c1);
+ }
  echo "<br><b>Група СТс-41, Семчишин Віталій Ігорович</b>";
  echo "<br>";
  echo "<b>Дата створення документу = ".date('16.09.2022')."</b>";
@@ -79,7 +82,7 @@
  $i1 = 0;
  while ($i1 < 5) {
  		$i1++;
- 		$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		$y1 = cp(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  		echo "<div class='first'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i1 = $y1</div><br>";
  }
  $i2=0;
