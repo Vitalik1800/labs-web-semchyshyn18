@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-	<img src="1.png" alt="">
+	<img src="../img/1.png" alt="">
 	<form action="" method="post">
 		<input type="text" name="a" placeholder="Enter A"><br><br>	
 		<input type="text" name="b" placeholder="Enter B"><br><br>
