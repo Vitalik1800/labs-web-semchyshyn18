@@ -5,6 +5,53 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Лабораторна робота №12</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<style>
+		.first{
+			width: 215px;
+			height: 129px;
+			margin: 0;
+			padding: 0;
+			background: #434343;
+			color: #fff;
+			border: #434343;
+		}
+
+		.second{
+			width: 225px;
+			height: 134px;
+			margin: 0;
+			padding: 0;
+			background: #505050;
+			color: #fff;
+		}
+
+		.third{
+			width: 235px;
+			height: 139px;
+			margin: 0;
+			padding: 0;
+			background: #575757;
+			color: #fff;
+		}
+
+		.fourth{
+			width: 245px;
+			height: 144px;
+			margin: 0;
+			padding: 0;
+			background: #646464;
+			color: #fff;
+		}
+
+		.fifth{
+			width: 255px;
+			height: 149px;
+			margin: 0;
+			padding: 0;
+			background: #717171;
+			color: #fff;
+		}
+	</style>
 </head>
 <body>
 	<img src="../img/1.png" alt="">
