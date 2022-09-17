@@ -78,14 +78,7 @@
  	while ($i1 < 5) {
  		$i1++;
  		$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		echo "<div style='width: 215px;
-			height: 129px;
-			margin: 0;
-			padding: 0;
-			background: #434343;
-			color: #fff;
-			border: #434343;'>
-			<div>Результати з виконанням циклу while:</div> Ітерація $i1 = $y1</div><br>";
+ 		echo "Результати з виконанням циклу while: Ітерація $i1 = $y1";
  	}
  	$i2=0;
  	while($i2 < 5):
