@@ -70,7 +70,8 @@
  echo "<br>";
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br>";
  if(isset($_POST['submit'])){
- 	$a = $_POST['a'];
+	 echo "clicked";
+ 	/*$a = $_POST['a'];
  	$b = $_POST['b'];
  	$c = $_POST['c'];
  	$x = $_POST['x'];
@@ -99,6 +100,6 @@
  	for($i5=1; $i5 <= 5; $i5++){
  		$y5 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  		echo "<div class='fifth'><div>Результати з виконанням циклу for (альтернативний синтаксис):</div> Ітерація $i5 = $y5</div><br>";	
- 	}
+ 	}*/
  }
 ?>
