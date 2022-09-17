@@ -73,35 +73,10 @@
  $b = $_POST['b'];
  $c = $_POST['c'];
  $x = $_POST['x'];
- function While(){
-	$i1 = 0;
- 	while ($i1 < 5) {
+ $i1 = 0;
+ while ($i1 < 5) {
  		$i1++;
  		$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 	} 
-	return $y1;
- }
- if(isset($_POST['submit'])){
- 	echo "<div class='first'>While()</div>";
- 	/*$i2=0;
- 	while($i2 < 5):
- 		$y2 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		$i2++;
- 		echo "<div class='second'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i2 = $y2</div><br>";
- 	endwhile;
- 	$i3 = 0;
- 	do{
- 		$y3 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		$i3++;
- 		echo "<div class='third'><div>Результати з виконанням циклу do while:</div> Ітерація $i3 = $y3</div><br>";
- 	} while($i3 < 5);
- 	for ($i4=1; $i4 <= 5; $i4++) { 
- 		$y4 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		echo "<div class='fourth'><div>Результати з виконанням циклу for:</div> Ітерація $i4 = $y4</div><br>";	
- 	}
- 	for($i5=1; $i5 <= 5; $i5++){
- 		$y5 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		echo "<div class='fifth'><div>Результати з виконанням циклу for (альтернативний синтаксис):</div> Ітерація $i5 = $y5</div><br>";	
- 	}*/
+ 		echo "<div class='first'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i1 = $y1</div><br>";
  }
 ?>
