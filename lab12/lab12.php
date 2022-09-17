@@ -87,7 +87,7 @@
  }
  $i2=0;
  while($i2 < 5):
- 	$y2 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 	$y2 = cp(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  	$i2++;
  ?>
  <div class="second"><div>Результати з виконанням циклу while (альтернативний синтаксис):</div><?php echo "Ітерація ".$i2."=".$y2;?></div><br>
@@ -95,20 +95,20 @@
 endwhile;
 $i3 = 0;
  	do{
- 		$y3 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		$y3 = cp(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  		$i3++;
  		?>
  		<div class="third"><div>Результати з виконанням циклу do while:</div><?php echo "Ітерація ".$i3."=".$y3;?></div><br>
  		<?php
  	} while($i3 < 5);
  	for ($i4=1; $i4 <= 5; $i4++) { 
- 		$y4 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		$y4 = cp(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  		?>
  		<div class="fourth"><div>Результати з виконанням циклу for:</div><?php echo "Ітерація ".$i4."=".$y4;?></div><br>	
  		<?php 
  	}
  	for($i5=1; $i5 <= 5; $i5++){
- 		$y5 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
+ 		$y5 = cp(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  		?>
  		<div class="fifth"><div>Результати з виконанням циклу for: (альтернативний синтаксис)</div><?php echo "Ітерація ".$i5."=".$y5;?></div><br>	
  		<?php 
