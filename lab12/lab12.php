@@ -59,7 +59,7 @@
 		<input type="text" name="b" placeholder="Enter B"><br><br>
 		<input type="text" name="c" placeholder="Enter C"><br><br>
 		<input type="text" name="x" placeholder="Enter X"><br><br>
-		<button name="submit" value="Calculate">Calculate</button>
+		<button name="submit" value="submit">Calculate</button>
 			<br>	
 	</form>
 </body>
