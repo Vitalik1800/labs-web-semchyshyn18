@@ -64,6 +64,9 @@
 </body>
 </html>
 <?php 
+ if(isset($_POST['a']) && isset($_POST['b']) && isset($_POST['c']) && isset($_POST['x'])){
+    echo "clicked";
+ }
  if(isset($_POST['submit'])){
  echo "<br><b>Група СТс-41, Семчишин Віталій Ігорович</b>";
  echo "<br>";
