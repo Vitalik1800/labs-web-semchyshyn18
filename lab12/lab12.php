@@ -71,10 +71,10 @@
  echo "<b>Дата створення документу = ".date('16.09.2022')."</b>";
  echo "<br>";
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br>";
-	 $a = $_POST['a'];
- $b = $_POST['b'];
- $c = $_POST['c'];
- $x = $_POST['x'];
+ $a = $_GET['a'];
+ $b = $_GET['b'];
+ $c = $_GET['c'];
+ $x = $_GET['x'];
  $i1 = 0;
  $y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
  while ($i1 < 5) {
