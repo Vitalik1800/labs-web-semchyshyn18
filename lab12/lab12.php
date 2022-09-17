@@ -69,17 +69,20 @@
  echo "<b>Дата створення документу = ".date('16.09.2022')."</b>";
  echo "<br>";
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br>";
- if(isset($_POST['submit'])){
- 	$a = $_POST['a'];
- 	$b = $_POST['b'];
- 	$c = $_POST['c'];
- 	$x = $_POST['x'];
- 	$i1 = 0;
+ $a = $_POST['a'];
+ $b = $_POST['b'];
+ $c = $_POST['c'];
+ $x = $_POST['x'];
+ function While(){
+	$i1 = 0;
  	while ($i1 < 5) {
  		$i1++;
  		$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		echo "<div class='first'>$c * pi</div>";
- 	}
+ 	} 
+	return $y1;
+ }
+ if(isset($_POST['submit'])){
+ 	echo "<div class='first'>While()</div>";
  	/*$i2=0;
  	while($i2 < 5):
  		$y2 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
