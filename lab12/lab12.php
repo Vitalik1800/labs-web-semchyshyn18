@@ -78,7 +78,7 @@
  	while ($i1 < 5) {
  		$i1++;
  		//$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		echo $a;
+ 		echo "<div class='first'>$a</div>;
  	}
  	/*$i2=0;
  	while($i2 < 5):
