@@ -66,7 +66,7 @@
 <?php 
  echo "<br><b>Група СТс-41, Семчишин Віталій Ігорович</b>";
  echo "<br>";
- echo "<b>Дата створення документу = ".date('d.m.2022')."</b>";
+ echo "<b>Дата створення документу = ".date('16.09.2022')."</b>";
  echo "<br>";
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br>";
  if(isset($_POST['submit'])){
@@ -78,7 +78,14 @@
  	while ($i1 < 5) {
  		$i1++;
  		$y1 = $c * pi(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		echo "<div class='first'><div>Результати з виконанням циклу while:</div> Ітерація $i1 = $y1</div><br>";
+ 		echo "<div style='width: 215px;
+			height: 129px;
+			margin: 0;
+			padding: 0;
+			background: #434343;
+			color: #fff;
+			border: #434343;'>
+			<div>Результати з виконанням циклу while:</div> Ітерація $i1 = $y1</div><br>";
  	}
  	$i2=0;
  	while($i2 < 5):
