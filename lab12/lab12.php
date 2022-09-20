@@ -83,7 +83,7 @@
  while ($i1 < 5) {
  		$i1++;
  		$y1 = cp(sqrt($a), 3*sqrt($b), sin($c)) / (log($x)) / (1/tan($c))+ min($a,$b,$c);
- 		echo "<div class='first'><div>Результати з виконанням циклу while (альтернативний синтаксис):</div> Ітерація $i1 = $y1</div><br>";
+ 		echo "<div class='first'><div>Результати з виконанням циклу while:</div> Ітерація $i1 = $y1</div><br>";
  }
  $i2=0;
  while($i2 < 5):
