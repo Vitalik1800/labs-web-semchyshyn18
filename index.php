@@ -14,5 +14,6 @@
 <body>
 	<a href="lab11/lab11.php">Лабораторна робота №11</a><br>
 	<a href="lab12/lab12.php">Лабораторна робота №12</a><br>
+	<a href="lab13/lab13.php">Лабораторна робота №13</a><br>
 </body>
 </html>
