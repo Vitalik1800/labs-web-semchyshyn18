@@ -1,2 +1,2 @@
-# labs-wed-duda
+# labs-web-semchyshyn
 Лабораторні роботи з веб-технологій 2-семестр
