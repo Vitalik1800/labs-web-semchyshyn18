@@ -147,7 +147,7 @@
 	 });
 	 $newmartix = array_product($matrix);
 	 $func = array_map(function($newmartix){
-	 	return $newmartix * 2.2;
+	 	return $newmartix * 2.2; // Утворення матриці 2 за допомогою множення на мінімальний додатній елемент матриці 1
 	 }, $matrix);
 	 $new_mat1 = $func[0]."\t".$func[1]."\t".$func[2]."<br>";
      $new_mat2 = $func[3]."\t".$func[4]."\t".$func[5]."<br>";
@@ -163,8 +163,8 @@
 	 $sum = array_sum($minus);
 	 $sqr = sqrt($product);
 	 $sqr3 = -30.36 ** (1/3);
-	 $mat = array_map(function($product){
-	 	return $product*(-30.36)+905.512+(-3.1196120490673); // Добуток множиться на суму з від'ємних елементів масиву, корінь квадратний з добутку додатні
+	 $mat = array_map(function($newm){
+	 	return $newm*4.84; // Утворення матриці 3 за допомогою множення на мінімальний додатній елемент матриці 2
 	 }, $func);
 	 $new_matrix1 = $mat[0]."\t".$mat[1]."\t".$mat[2]."<br>";
      $new_matrix2 = $mat[3]."\t".$mat[4]."\t".$mat[5]."<br>";
