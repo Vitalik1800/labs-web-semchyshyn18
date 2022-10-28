@@ -87,33 +87,33 @@ echo "<br><b>Група СТс-41, Семчишин Віталій Ігоров�
         echo "<b>Дата створення документу = ".date('25.10.2022')."</b>";
         echo "<br>";
         echo "<b>Поточна дата = ".date('d.m.2022')."</b></br><br>";
- $regex = "/(^[+-]?\d*\.\d+$)/";
+ $regex = "!\d+\.*\d*!";
  if(isset($_POST['submit'])){
-    if(preg_match($regex, $_POST['text1'])){
-        $output1 = $_POST['text1'];
+    if(preg_match($regex, $_POST['text1'], $matches)){
+        $output1 = $matches[0];
     } else{
         $output1 = "";
     }
-     if(preg_match($regex, $_POST['text2'])){
-        $output2 = $_POST['text2'];
+     if(preg_match($regex, $_POST['text2'], $matches)){
+        $output2 = $matches[0];
     } else{
         $output2 = "";
     }
-     if(preg_match($regex, $_POST['text3'])){
-        $output3 = $_POST['text3'];
+     if(preg_match($regex, $_POST['text3'], $matches)){
+        $output3 = $matches[0];
     } else{
         $output3 = "";
-    }if(preg_match($regex, $_POST['text4'])){
-        $output4 = $_POST['text4'];
+    }if(preg_match($regex, $_POST['text4'], $matches)){
+        $output4 = $matches[0];
     } else{
         $output4 = "";
     }
-    if(preg_match($regex, $_POST['text5'])){
-        $output5 = $_POST['text5'];
+    if(preg_match($regex, $_POST['text5'], $matches)){
+        $output5 = $matches[0];
     } else{
         $output5 = "";
-    }if(preg_match($regex, $_POST['text6'])){
-        $output6 = $_POST['text6'];
+    }if(preg_match($regex, $_POST['text6'], $matches)){
+        $output6 = $matches[0];
     } else{
         $output6 = "";
     }
