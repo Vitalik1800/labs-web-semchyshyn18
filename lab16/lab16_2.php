@@ -20,8 +20,7 @@
 </style>
 <img src="2.png" alt="">
 <form action="" method="post">
-    <textarea type="text" name="string1" placeholder="String1"></textarea><br><br>
-    <textarea type="text" name="string2" placeholder="String2"></textarea><br><br>
+    <textarea type="text" name="string" placeholder="String1"></textarea><br><br>
     <input type="text" name="number">
     <input type="submit" name="submit" value="Click">
 </form>
@@ -33,17 +32,24 @@
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br><br>";
  if(isset($_POST['submit'])){
     $regex = "/[$_POST[number]]+/";
-    $string1 = $_POST['string1'];
-    $string2 = $_POST['string2'];
+    $string1 = $_POST['string'];
+    $string1[2] = $_POST['number'];
     $words1 = preg_split($regex, $string1);
-    $words2 = preg_split($regex, $string2);
-    if($string1[2] == $_POST['number'] && $string2 != $_POST['number']){
-        ?>
-       <div class='first'><?php echo var_dump($words1);?></div><br>
+    $new_arr = array_filter($words1, function ($val) use ($string1) {
+        return (strpos($string1, $val) !== false);
+    });
+    if ($new_arr) {
+        usort($new_arr, function ($a, $b) {
+        return str_word_count($b) - str_word_count($a);
+    });
+    ?>
+    <div class='first'>Рядок: <?php echo var_dump($new_arr);?></div><br>
+    <?php 
+    echo "<div class='second'>Найбільше слів в рядку: $new_arr[0]</div><br>";
+    ?>
     <?php } else{
 
         ?>
-        <div class='second'><?php echo var_dump($words2);?></div><br>
     <?php }
  }
 
