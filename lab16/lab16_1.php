@@ -33,6 +33,32 @@
     <input type="submit" name="submit" value="Click">
 </form>
 <?php
+function encode_a_string ( $string )  
+{ 
+    $string = str_split(strtolower($string)); 
+    $alphas = range("a", "z");
+        if($string != '') {
+            $str_key = array_search($string[0], $alphas);
+            $str_key*= 100*100; 
+        }
+        else 
+            $str_key = ''; 
+
+    return $str_key; 
+} 
+function decode_a_string($string)  
+{ 
+    $string = str_split($string); 
+    $alphas = range("a", "z");
+        if($string != '') {
+            $str_key = array_search($string[0], $alphas);
+            $str_key = implode($string);        
+        }
+        else 
+            $str_key = ''; 
+
+    return $str_key; 
+} 
 echo "<br><b>Група СТс-41, Семчишин Віталій Ігорович</b>";
         echo "<br>";
         echo "<b>Дата створення документу = ".date('29.10.2022')."</b>";
@@ -41,9 +67,9 @@ echo "<br><b>Група СТс-41, Семчишин Віталій Ігоров�
  if(isset($_POST['submit'])){
    $str = $_POST['string'];
    echo "<div class='first'>".nl2br("Початковий рядок: $str \n")."</div>.<br>";
-   $encoded = base64_encode($str);
-    echo "<div class='second'>".nl2br("Рядок після кодування: $encoded\n")."</div>.<br>";
-   $decoded = base64_decode($encoded);
+   $encoded = encode_a_string ($str);
+    echo "<div class='second'>".encode_a_string($str)."</div>.<br>";
+   $decoded = decode_a_string($str);
    echo "<div class='third'>Рядок після декодування: $decoded"."</div>";
  }
 
