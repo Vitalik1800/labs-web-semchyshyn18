@@ -36,42 +36,88 @@
 			border: #646464;
 		}
 </style>
+
 <img src="1.png" alt=""><br>
 <form action="" method="post">
-	<br><textarea name="first" id="" placeholder="Введіть дані для першого файлу" cols="30" rows="5"></textarea><br><br>
-	<input type="submit" name="submit1">
-</form>
-<form action="" method="post">
-	<textarea name="second" id="" placeholder="Введіть дані для другого файлу" cols="30" rows="5"></textarea><br><br>
-	<input type="submit" name="submit2">
-</form>
-<form action="" method="post">
-	<textarea name="third" id="" placeholder="Введіть дані для третього файлу" cols="30" rows="5"></textarea><br><br>
-	<input type="submit" name="submit3">
-</form>
-<form action="" method="post">
-	<textarea name="all" id="" placeholder="Введіть дані для з першої, другої, третьої форми" cols="30" rows="5"></textarea><br><br>
-	<input type="submit" name="submit4">
+    <select name="S">
+        <option value="s1">s1</option>
+        <option value="s1,s2">s1, s2</option>
+         <option value="s1,s2,s3">s1, s2, s3</option>
+         <option value="s1,s2,s3,s4">s1, s2, s3, s4</option>
+          <option value="s1,s2,s3,s4, s5">s1, s2, s3, s4, s5</option>
+    </select><br><br>
+
+    <select name="T">
+        <option value="t1">t1</option>
+        <option value="t1,t2">t1, t2</option>
+         <option value="t1,t2,t3">t1, t2, t3</option>
+         <option value="t1,t2,t3,t4">t1, t2, t3, t4</option>
+          <option value="t1,t2,t3,t4, t5">t1, t2, t3, t4, t5</option>
+    </select>
+
+    <select name="U">
+        <option value="u1">u1</option>
+        <option value="u1,u2">u1, u2</option>
+         <option value="u1,u2,u3">u1, u2, u3</option>
+         <option value="u1,u2,u3,u4">u1, u2, u3, u4</option>
+          <option value="u1,u2,u3,u4, u5">u1, u2, u3, u4, u5</option>
+    </select>
+
+    <input type="submit" name="submit1" vlaue="Choose options">
 </form>
 
 <?php
- echo "<br><b>Група СТс-41, Семчишин Віталій Ігорович</b>";
+echo "<br><b>Група СТс-41, Семчишин Віталій Ігорович</b>";
  echo "<br>";
- echo "<b>Дата створення документу = ".date('29.10.2022')."</b>";
+ echo "<b>Дата створення документу = ".date('04.10.2022')."</b>";
  echo "<br>";
  echo "<b>Поточна дата = ".date('d.m.2022')."</b></br><br>";
- if(isset($_POST['submit1'])){
- 	$file1 = fopen("file1.txt", "w") or die("Unable to open file!");
- 	$first = $_POST['first'];
- 	if($first >= 's1'){
- 		fwrite($file1, $first);
- 	} else{
- 		echo "Unable enter date do file";
- 	}
- 	fclose($file1);
+ 	global $first,$second,$third;
+    if(isset($_POST['submit1'])){
+    	if(!empty($_POST['S'])) {
+    		$selected = $_POST['S'];
+        	echo 'You have chosen: ' . $selected."<br>";
+        	$file1 = fopen("file1.txt", "w") or die("Unable to open file!");
+ 			$first = $_POST['S'];
+ 			fwrite($file1, $selected);
+ 			fclose($file1);
 
- }
+    } else {
+        echo 'Please select the value.';
+    }
+    if(!empty($_POST['T'])) {
+    		$selected = $_POST['T'];
+        	echo 'You have chosen: ' . $selected."<br>";
+        	$file2 = fopen("file2.txt", "w") or die("Unable to open file!");
+ 			$second = $_POST['T'];
+ 			fwrite($file2, $selected);
+ 			fclose($file2);
+
+    } else {
+        echo 'Please select the value.';
+    }
+    if(!empty($_POST['U'])) {
+    		$selected = $_POST['U'];
+        	echo 'You have chosen: ' . $selected."<br>";
+        	$file3 = fopen("file3.txt", "w") or die("Unable to open file!");
+ 			$third = $_POST['U'];
+ 			fwrite($file3, $selected);
+ 			fclose($file3);
+
+    } else {
+        echo 'Please select the value.';
+    }
+    }
 ?>
+
+<form action="" method="post">
+	<textarea  name="all" id="" placeholder="Введіть дані для з першої, другої, третьої форми" cols="30" rows="5">
+<?php echo $first." ".$second." ".$third;?>
+	</textarea><br><br>
+	<input type="submit" name="submit4" value="Створити загальний файл">
+</form>
+
+
 <?php 
   $f1 = fopen("file1.txt", "r");
   if($f1){
@@ -82,18 +128,6 @@
  else echo "error";
  fclose($f1);
 ?>
-<?php
- if(isset($_POST['submit2'])){
- 	$file2 = fopen("file2.txt", "w") or die("Unable to open file!");
- 	$second = $_POST['second'];
- 	if($second >= 't1'){
- 		fwrite($file2, $second);
- 	} else{
- 		echo "Unable enter date do file";
- 	}
- 	fclose($file2);
- }
-?>
 <?php 
   $f2 = fopen("file2.txt", "r");
   if($f2){
@@ -103,18 +137,6 @@
  }
  else echo "error";
  fclose($f2);
-?>
-<?php
- if(isset($_POST['submit3'])){
- 	$file3 = fopen("file3.txt", "w") or die("Unable to open file!");
- 	$third = $_POST['third'];
- 	if($third >= 'u1'){
- 		fwrite($file3, $third);
- 	} else{
- 		echo "Unable enter date do file";
- 	}
- 	fclose($file3);
- }
 ?>
 <?php 
   $f3 = fopen("file3.txt", "r");
@@ -130,11 +152,7 @@
  if(isset($_POST['submit4'])){
  	$file4 = fopen("all.txt", "w") or die("Unable to open file!");
  	$all = $_POST['all'];
- 	if($all >= 's1' && $all <= 'u'){
- 		fwrite($file4, $all);
- 	} else{
- 		echo "Unable enter date do file";
- 	}
+ 	fwrite($file4, $all);
  	fclose($file4);
  }
 ?>
