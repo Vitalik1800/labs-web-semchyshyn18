@@ -6,8 +6,8 @@
 	<title>Лабораторна робота №14</title>
 	<style type="text/css">
 		.first{
-			width: 215px;
-			height: 129px;
+			width: 235px;
+			height: 169px;
 			margin: 0;
 			padding: 0;
 			background: #434343;
@@ -133,63 +133,91 @@
 		echo "<b>Дата створення документу = ".date('29.09.2022')."</b>";
 		echo "<br>";
 		echo "<b>Поточна дата = ".date('d.m.2022')."</b></br><br>";
-	 $a = array(-1.2, 13.8, -5.2);
-	 $b = array(6.1, -3.2, 12.1);
-	 $c = array(2.2, -4.2, 7.1);
-	 $matrix = array_merge($a,$b, $c);
-	 $output_mat1 = $matrix[0]."\t".$matrix[1]."\t".$matrix[2]."<br>";
-     $output_mat2 = $matrix[3]."\t".$matrix[4]."\t".$matrix[5]."<br>";
-     $output_mat3 = $matrix[6]."\t".$matrix[7]."\t".$matrix[8]."<br>";
-	 $min_added_element = array_filter($matrix, function($min){
-	 	if($min > 1){
-	 		return $min;
-	 	}
-	 });
-	 $newmartix = array_product($matrix);
+		$matrix = array(
+			array(-1.2,13.8,-5.2),
+			array(6.1,-3.2,12.1),
+			array(2.2,-4.2,7.1)
+		);
+		$added1 = array_filter($matrix[0], function($min){
+			if($min > 1){
+				return $min;
+			}
+		});
+		$added2 = array_filter($matrix[1], function($min){
+			if($min > 1 && $min < 10){
+				return $min;
+			}
+		});
+		$added3 = array_filter($matrix[2], function($min){
+			if($min >= 1 && $min < 7){
+				return $min;
+			}
+		});
+		$num1 = $added1;
+		$num2 = $added2;
+		$num3 = $added3;
+		$newmartix = array_product($matrix[0]);
+		$newmartix1 = array_product($matrix[1]);
+		$newmartix2 = array_product($matrix[2]);
+		$newmartix3 = $newmartix * $newmartix1 * $newmartix2;
+
 	 $func = array_map(function($newmartix){
 	 	return $newmartix * 2.2; // Утворення матриці 2 за допомогою множення на мінімальний додатній елемент матриці 1
-	 }, $matrix);
-	 $new_mat1 = $func[0]."\t".$func[1]."\t".$func[2]."<br>";
-     $new_mat2 = $func[3]."\t".$func[4]."\t".$func[5]."<br>";
-     $new_mat3 = $func[6]."\t".$func[7]."\t".$func[8]."<br>";
-	 $x = min($min_added_element);
-	 $added = array_filter($func, function($k){
+	 }, $matrix[0]);
+	  $func1 = array_map(function($newmartix){
+	 	return $newmartix * 2.2; // Утворення матриці 2 за допомогою множення на мінімальний додатній елемент матриці 1
+	 }, $matrix[1]);
+	  $func2 = array_map(function($newmartix){
+	 	return $newmartix * 2.2; // Утворення матриці 2 за допомогою множення на мінімальний додатній елемент матриці 1
+	 }, $matrix[2]);
+	  $matrix_combine =  array_merge($func, $func1, $func2);
+	  $added = array_filter($matrix_combine, function($k){
 	 	return $k > 0;
 	 });
-	 $minus = array_filter($func, function($k){
+	  $minus = array_filter($matrix_combine, function($k){
 	 	return $k < 0;
 	 });
-	 $product = array_product($added);
-	 $sum = array_sum($minus);
-	 $sqr = sqrt($product);
+	  $product = array_product($added);
+	  $sum = array_sum($minus);
+	   $sqr = sqrt($product);
+
 	 $sqr3 = -30.36 ** (1/3);
-	 $mat = array_map(function($newm){
-	 	return $newm*4.84; // Утворення матриці 3 за допомогою множення на мінімальний додатній елемент матриці 2
-	 }, $func);
-	 $new_matrix1 = $mat[0]."\t".$mat[1]."\t".$mat[2]."<br>";
-     $new_matrix2 = $mat[3]."\t".$mat[4]."\t".$mat[5]."<br>";
-     $new_matrix3 = $mat[6]."\t".$mat[7]."\t".$mat[8]."<br>";
-	 $null = array_filter($mat, function($k1){
+		 $func11 = array_map(function($newmartix){
+	 	return $newmartix * 4.84; // Утворення матриці 2 за допомогою множення на мінімальний додатній елемент матриці 1
+	 }, $matrix[0]);
+	  $func22= array_map(function($newmartix){
+	 	return $newmartix * 4.84; // Утворення матриці 2 за допомогою множення на мінімальний додатній елемент матриці 1
+	 }, $matrix[1]);
+	  $func33 = array_map(function($newmartix){
+	 	return $newmartix * 4.84; // Утворення матриці 2 за допомогою множення на мінімальний додатній елемент матриці 1
+	 }, $matrix[2]);
+	  $matrix_combine1 =  array_merge($func11, $func22, $func33);
+	  $null = array_filter($matrix_combine1, function($k1){
 	 	return $k1 == 0;
 	 });
-	 $added_2 = array_filter($mat, function($k){
+	  $added_2 = array_filter($matrix_combine1, function($k){
 	 	return $k > 0;
 	 });
 	 ?>
-	 <div class="first">Початкова матриця: <br> <?php echo $output_mat1; echo $output_mat2;
-	 echo $output_mat3?></div><br>
-	  <div class="second">Мінімальний додатній елемент матриці 1: <?php echo $x;?></div><br>	
-	  <div class="third">Добуток додатніх елементів матриці 1: <?php echo $newmartix;?></div><br>	
-	  <div class="fourth">Матриця 2: <br> <?php echo $new_mat1; echo $new_mat2;
-	 echo $new_mat3?></div><br>
+	 <div class="first">Початкова матриця: <br> <?php var_dump($matrix);?></div><br>
+	  <div class="second">Мінімальний додатній елемент матриці 1 рядок 1: <?php 
+	    echo var_dump($num1);
+	  ;?></div><br>	
+	   <div class="second">Мінімальний додатній елемент матриці 1 рядок 2: <?php 
+	    echo var_dump($num2);
+	  ;?></div><br>	
+	  <div class="third">Мінімальний додатній елемент матриці 1 рядок 3: <?php 
+	    echo var_dump($num3);
+	  ;?></div><br>		
+	  <div class="third">Добуток додатніх елементів матриці 1: <?php echo $newmartix3;?></div><br>	
+	  <div class="fourth">Матриця 2: <br> <?php echo var_dump($matrix_combine);?></div><br>
 	  <div class="fifth">Додатні елементи матриці 2: <br><?php echo implode(" | ",$added);?></div><br>	
 	  <div class="sixth">Від'ємні елементи матриці 2: <br><?php echo implode(" | ", $minus);?></div><br>	
 	  <div class="seventh">Добуток додатніх елементів матриці 2: <?php echo $product;?></div><br>
 	  <div class="eight">Сума від'ємних елементів матриці 2: <?php echo $sum;?></div><br>
 	  <div class="nine">Корінь квадратний з добутку: <?php echo $sqr; ?></div><br>
 	   <div class="ten">Корінь кубічний із суми: <?php echo $sqr3;?></div><br>
-	   <div class="eleven">Матриця 3: <br> <?php echo $new_matrix1; echo $new_matrix2;
-	 echo $new_matrix3?></div><br>
+	   <div class="eleven">Матриця 3: <br> <?php var_dump($matrix_combine1)?></div><br>
 	  <div class="twel">Нульові елементи матриці 3: <?php echo implode("",$null);?></div><br>
 	   <div class="t13">Додатні елементи матриці 3: <?php echo implode(" | ", $added_2);?></div><br>
 	   
