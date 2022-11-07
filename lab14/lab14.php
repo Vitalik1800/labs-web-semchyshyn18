@@ -34,7 +34,7 @@
 		}
 		.fourth{
 			width: 245px;
-			height: 159px;
+			height: 200px;
 			margin: 0;
 			padding: 0;
 			background: #646464;
