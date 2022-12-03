@@ -34,7 +34,7 @@
 		}
 		.fourth{
 			width: 245px;
-			height: 200px;
+			height: 159px;
 			margin: 0;
 			padding: 0;
 			background: #646464;
@@ -138,20 +138,14 @@
 			array(6.1,-3.2,12.1),
 			array(2.2,-4.2,7.1)
 		);
-		$added1 = array_filter($matrix[0], function($min){
-			if($min > 1){
-				return $min;
-			}
+		$added1 = array_filter($matrix[0], function($count){
+			return $count > 0;
 		});
-		$added2 = array_filter($matrix[1], function($min){
-			if($min > 1 && $min < 10){
-				return $min;
-			}
+		$added2 = array_filter($matrix[1], function($count){
+			return $count > 0;
 		});
-		$added3 = array_filter($matrix[2], function($min){
-			if($min >= 1 && $min < 7){
-				return $min;
-			}
+		$added3 = array_filter($matrix[2], function($count){
+			return $count > 0;
 		});
 		$num1 = $added1;
 		$num2 = $added2;
@@ -200,26 +194,35 @@
 	 });
 	 ?>
 	 <div class="first">Початкова матриця: <br> <?php var_dump($matrix);?></div><br>
-	  <div class="second">Мінімальний додатній елемент матриці 1 рядок 1: <?php 
+	   <div class="second">Додатні елементи матриці 1 рядок 1: <?php 
 	    echo var_dump($num1);
 	  ;?></div><br>	
-	   <div class="second">Мінімальний додатній елемент матриці 1 рядок 2: <?php 
+	   <div class="second">Додатні елементи матриці 1 рядок 2: <?php 
 	    echo var_dump($num2);
 	  ;?></div><br>	
-	  <div class="third">Мінімальний додатній елемент матриці 1 рядок 3: <?php 
+	  <div class="third">Додатні елементи матриці 1 рядок 3: <?php 
 	    echo var_dump($num3);
+	  ;?></div><br>	
+	  <div class="second">Мінімальний додатній елемент матриці 1 рядок 1: <?php 
+	    echo var_dump(min($num1));
+	  ;?></div><br>	
+	   <div class="second">Мінімальний додатній елемент матриці 1 рядок 2: <?php 
+	    echo var_dump(min($num2));
+	  ;?></div><br>	
+	  <div class="third">Мінімальний додатній елемент матриці 1 рядок 3: <?php 
+	    echo var_dump(min($num3));
 	  ;?></div><br>		
 	  <div class="third">Добуток додатніх елементів матриці 1: <?php echo $newmartix3;?></div><br>	
 	  <div class="fourth">Матриця 2: <br> <?php echo var_dump($matrix_combine);?></div><br>
-	  <div class="fifth">Додатні елементи матриці 2: <br><?php echo implode(" | ",$added);?></div><br>	
-	  <div class="sixth">Від'ємні елементи матриці 2: <br><?php echo implode(" | ", $minus);?></div><br>	
+	  <div class="fifth">Додатні елементи матриці 2: <br><?php echo var_dump($added);?></div><br>	
+	  <div class="sixth">Від'ємні елементи матриці 2: <br><?php echo var_dump($minus);?></div><br>	
 	  <div class="seventh">Добуток додатніх елементів матриці 2: <?php echo $product;?></div><br>
 	  <div class="eight">Сума від'ємних елементів матриці 2: <?php echo $sum;?></div><br>
 	  <div class="nine">Корінь квадратний з добутку: <?php echo $sqr; ?></div><br>
 	   <div class="ten">Корінь кубічний із суми: <?php echo $sqr3;?></div><br>
 	   <div class="eleven">Матриця 3: <br> <?php var_dump($matrix_combine1)?></div><br>
-	  <div class="twel">Нульові елементи матриці 3: <?php echo implode("",$null);?></div><br>
-	   <div class="t13">Додатні елементи матриці 3: <?php echo implode(" | ", $added_2);?></div><br>
+	  <div class="twel">Нульові елементи матриці 3: <?php echo var_dump($null);?></div><br>
+	   <div class="t13">Додатні елементи матриці 3: <?php echo var_dump($added_2);?></div><br>
 	   
 	 <?php   
 	?>
